@@ -1,0 +1,21 @@
+def turn_right():
+    repeat(turn_left,3)
+def jump():
+    turn_left()
+    turn_left()
+    move()
+    turn_right()
+    move()
+    turn_right()
+while True:
+    if on_beeper():
+        print("well done")
+        turn_off()
+    elif front_is_clear():
+        move()
+    elif not front_is_clear() and right_is_clear():
+        turn_right()
+    elif not front_is_clear() and left_is_clear():
+        turn_left()
+    elif not front_is_clear() and not right_is_clear() and not left_is_clear():
+        jump()
